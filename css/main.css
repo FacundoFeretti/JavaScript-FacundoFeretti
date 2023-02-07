@@ -1,0 +1,114 @@
+*{
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 900; 
+}
+
+#navbar{
+    background-color: transparent !important;
+    /* width: 100%; */
+}
+
+#header{
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#cartButton{
+    background-color: transparent;
+    border: none;
+    color: white;
+    transform: rotate(0deg);
+    transition: all 1s ease;
+}
+
+#cartButton:hover{
+    transform: rotate(360deg);
+    transition: all 1s ease;
+}
+
+.nav-link, .active, .navbar-brand{
+    color: white !important;
+}
+
+
+
+.navbar-toggler {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+.navbar-toggler:focus {
+    border-color: white;
+  }
+
+  
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: transparent;
+}
+.modal-contenido {
+    background-color: rgba(135, 151, 175, 0.7);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 99.5vw;
+    border-radius: 8px;
+    box-shadow: 1px 1px 12px gray;
+}
+
+#totalCompra{
+    color: white;
+    margin-top: 50px;
+    background-color: rgba(7, 13, 7, 0.5);
+    border-radius: 8px;
+}  
+
+.hidOverflow{
+    overflow-y: hidden;
+}
+
+.justify-center{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    box-shadow: 1px 1px 12px gray;
+}
+
+#galeria{
+    row-gap: 18px;
+}
+
+
+@media (min-width: 1000px){
+    #header{
+        background-size: cover;
+    }    
+
+    .navbar-nav {
+        gap: 50px;
+        align-items: center;
+    }
+
+    #customNav{
+        gap: 70%;
+    }
+
+    #navbarNavDropdown{
+        
+        right: 6%;
+    }
+    
+}
