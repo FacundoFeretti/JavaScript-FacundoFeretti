@@ -4,30 +4,40 @@
 }
 
 #navbar{
-    background-color: transparent !important;
-    /* width: 100%; */
+    background-color: rgba(66, 75, 84, 0.3) !important;
+    border-radius: 6px;
 }
 
 #header{
-    height: 100vh;
+    height: 90vh;
     width: 100%;
-    background-image: url("https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 #cartButton{
-    background-color: transparent;
     border: none;
     color: white;
-    transform: rotate(0deg);
-    transition: all 1s ease;
+    font-size: 2rem;
+    background-color: rgba(19, 87, 54, 0.7);
+    border-radius: 8px;
+    border: 1px black solid;
+    transition: 0.3s ease;
+    margin: 50px 0;
+    padding: 10px;
 }
 
 #cartButton:hover{
-    transform: rotate(360deg);
-    transition: all 1s ease;
+    border: 4px black solid;
+    background-color: rgba(19, 87, 54, 1);
+    transition: 0.3s ease;
 }
+
+#cartButton:hover #cartIcon{
+    rotate: 360deg;
+    transition: 2s ease;
+}
+
 
 .nav-link, .active, .navbar-brand{
     color: white !important;
@@ -51,20 +61,17 @@
 
 .modal {
     display: none;
-    position: fixed;
     z-index: 9999;
-    left: 0;
-    top: 0;
-    overflow: auto;
-    background-color: transparent;
+    position: fixed;
 }
 .modal-contenido {
-    background-color: rgba(135, 151, 175, 0.7);
+    background-color: rgba(135, 151, 175, 0.5);
     padding: 20px;
     border: 1px solid #888;
-    width: 99.5vw;
+    min-width: 70vw;
     border-radius: 8px;
     box-shadow: 1px 1px 12px gray;
+    position: absolute;
 }
 
 #totalCompra{
@@ -72,9 +79,9 @@
     margin-top: 50px;
     background-color: rgba(7, 13, 7, 0.5);
     border-radius: 8px;
-}  
+} 
 
-.hidOverflow{
+.hideOverflow{
     overflow-y: hidden;
 }
 
@@ -89,6 +96,17 @@
 
 #galeria{
     row-gap: 18px;
+}
+
+#svg-container {
+    position: relative;
+}
+
+#svg-container .overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -106,9 +124,13 @@
         gap: 70%;
     }
 
-    #navbarNavDropdown{
-        
+    #navbarNavDropdown{ 
         right: 6%;
     }
-    
+
+    .modal-contenido{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    };
 }

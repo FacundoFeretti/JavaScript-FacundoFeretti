@@ -1,22 +1,26 @@
-const carrito = [];
-const openCartBtn = document.getElementById("cartButton");
-const cartModal = document.getElementById("cart-modal");
-const closeCartBtn = document.getElementById("closeBtnCart")
+let carrito = [];
 
-openCartBtn.addEventListener("click", function() {
-  let bodyOverflow = document.getElementById("body");
-  bodyOverflow.setAttribute("class", "hidOverflow")
-  cartModal.style.display = "block";
-});
+const openAndCloseCart = () => {
+  const cartModal = document.getElementById("cart-modal");
+  const openCartBtn = document.getElementById("cartButton");
+  const closeCartBtn = document.getElementById("closeBtnCart")
+  
+  openCartBtn.addEventListener("click", function() {
+    let bodyOverflow = document.getElementById("body");
+    bodyOverflow.setAttribute("class", "hideOverflow")
+    cartModal.style.display = "block";
+  });  
 
-closeCartBtn.addEventListener("click", function() {
-  let bodyOverflow = document.getElementById("body");
-  bodyOverflow.classList.remove("hidOverflow");
-  cartModal.style.display = "none";  
-});
+  closeCartBtn.addEventListener("click", function() {
+    let bodyOverflow = document.getElementById("body");
+    bodyOverflow.classList.remove("hideOverflow");
+    cartModal.style.display = "none";  
+  });
+}
 
-
-const crearGaleria = (arr) => {
+const crearGaleria = async () => {
+  const resp = await fetch('../json/products.json');
+  const arr =  await resp.json();
   arr.forEach((prod) => {
     let card = document.createElement("div");
     card.setAttribute("class", "col-xs-12 col-lg-3 justify-center");
@@ -42,6 +46,13 @@ const agregarAlCarrito = () => {
       mostrarCarrito(producto);
       localStorage.setItem('carrito', JSON.stringify(carrito));
       totalCarrito();
+      swal({
+        title: `Se agrego ${producto.nombre} al carrito!`,
+        text: "Entra al carrito para ver todos tus productos!",
+        icon: "success",
+        button: false,
+        timer: 2000,
+      });
     });
   });
     
@@ -50,7 +61,7 @@ const agregarAlCarrito = () => {
 const mostrarCarrito = (item) =>{
   let cartContent = document.getElementById("cartContent");
   let nuevoItem = document.createElement("div");
-  nuevoItem.setAttribute("class", "col-xs-12 col-lg-3 justify-center mb-4 removal");
+  nuevoItem.setAttribute("class", "cardRemoval col-xs-12 col-lg-3 justify-center mb-4");
   nuevoItem.innerHTML = `<div class="card" style="width: 18rem;">
                           <img src="${item.img}" class="card-img-top" alt="...">
                           <div class="card-body">
@@ -63,13 +74,11 @@ const mostrarCarrito = (item) =>{
 
 const localStorageDatos = () => {
   let lStorage = JSON.parse(localStorage.getItem("carrito"))
-  if(lStorage){
-    lStorage.forEach(item=>{
-      mostrarCarrito(item)
-      carrito.push(item)
-      totalCarrito();
-    });
-  }
+  lStorage ? lStorage.forEach(item=>{
+        mostrarCarrito(item)
+        carrito.push(item)
+        totalCarrito();
+      }) : undefined;
 };
 
 const totalCarrito = () =>{
@@ -79,19 +88,39 @@ const totalCarrito = () =>{
 
 const borrarCarrito = () => {
   let deleteButton = document.getElementById("deleteCart")
-  let cartElements = document.getElementsByClassName("removal");
   deleteButton.addEventListener("click",()=>{
     localStorage.removeItem("carrito");
     carrito = [];
-    cartElements.remove();
+    let totalCarrito = document.getElementById("totalCompra");
+    totalCarrito.innerText = `Total: $0`;
+    let removed = [...document.getElementsByClassName("cardRemoval")];
+    removed.forEach((e)=>{
+      e.remove();
+    });
   });
 };
 
+const slider = () => {
+  $("header").vegas({
+    delay: 5000,
+    slides: [
+      { src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
+      { src: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
+      { src: "https://images.unsplash.com/photo-1653630795384-fa8a46d8d382?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
+    ],
+    transition: "zoomOut"
+  });
+}
+
 const index = () =>{
-  crearGaleria(products);
-  agregarAlCarrito();
-  localStorageDatos();
-  borrarCarrito();
+  slider();
+  openAndCloseCart();
+  crearGaleria();
+  setTimeout(()=>{    
+    agregarAlCarrito()
+    localStorageDatos()
+    borrarCarrito()
+  }, 1000)
 }
 
 index();

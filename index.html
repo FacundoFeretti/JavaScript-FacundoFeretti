@@ -1,77 +1,85 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap" rel="stylesheet">    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/42236f5c33.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body id="body">
-    <header id="header">
-        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
-            <div id="customNav" class="container-fluid">
-                <a class="navbar-brand" href="#">Test</a>
-            
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <button id="cartButton"><i class="fa-solid fa-cart-shopping"></i> </button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorias
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Notebooks</a></li>
-                                <li><a class="dropdown-item" href="#">Auriculares</a></li>
-                                <li><a class="dropdown-item" href="#">Celulares</a></li>
-                                <li><a class="dropdown-item" href="#">Smart Tv</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main">
-        <div class="container-fluid">
-            <div id="cart-modal" class="modal">
-                <div id="cartContent" class="modal-contenido row">
-                    <div class="col-xs-12">
-                        <p id="totalCompra">Total:</p>
-                        <button id="deleteCart" class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash-can"></i> Descartar carrito</button>
-                        <button id="closeBtnCart" class="btn btn-success"><i class="fa-sharp fa-solid fa-circle-xmark"></i> Cerrar</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Final JS - Facundo Feretti</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap" rel="stylesheet">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/42236f5c33.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./vendor/vegas/vegas.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body id="body">
+        <header id="header">
+            <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+                <div id="customNav" class="container-fluid">
+                    <a class="navbar-brand" href="./index.html">Tecnologias</a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categorias
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#1a">Notebooks</a></li>
+                                    <li><a class="dropdown-item" href="#2a">Auriculares</a></li>
+                                    <li><a class="dropdown-item" href="#3a">Celulares</a></li>
+                                    <li><a class="dropdown-item" href="#4a">Smart Tv</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
+        </header>
         
-            <div id="galeria" class="row">
-                <div class="col-xs-12">
+        <main id="main">
+            <div class="container-fluid">
+                <div id="cart-modal" class="modal">
+                    <div id="cartContent" class="modal-contenido row">
+                        <div class="col-xs-12">
+                            <p id="totalCompra">Total:</p>
+                            <button id="deleteCart" class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash-can"></i> Descartar carrito</button>
+                            <button id="closeBtnCart" class="btn btn-success"><i class="fa-sharp fa-solid fa-circle-xmark"></i> Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="galeria" class="row">
+                    <div class="col-xs-12 d-flex justify-content-center">
+                        <button id="cartButton"><i id="cartIcon" class="fa-solid fa-cart-shopping"></i> CARRITO</button>
+                    </div>    
+                </div>
+            </div>
+            
+        </main>
+        
+        <footer>
+            <div id="svg-container">
+                <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(25, 87, 104, 1)" offset="0%"></stop><stop stop-color="rgba(25, 128, 152, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,196L120,228.7C240,261,480,327,720,359.3C960,392,1200,392,1440,351.2C1680,310,1920,229,2160,187.8C2400,147,2640,147,2880,130.7C3120,114,3360,82,3600,98C3840,114,4080,180,4320,187.8C4560,196,4800,147,5040,106.2C5280,65,5520,33,5760,57.2C6000,82,6240,163,6480,171.5C6720,180,6960,114,7200,138.8C7440,163,7680,278,7920,334.8C8160,392,8400,392,8640,367.5C8880,343,9120,294,9360,245C9600,196,9840,147,10080,171.5C10320,196,10560,294,10800,310.3C11040,327,11280,261,11520,204.2C11760,147,12000,98,12240,89.8C12480,82,12720,114,12960,179.7C13200,245,13440,343,13680,392C13920,441,14160,441,14400,375.7C14640,310,14880,180,15120,114.3C15360,49,15600,49,15840,40.8C16080,33,16320,16,16560,57.2C16800,98,17040,196,17160,245L17280,294L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(25, 135, 84, 1)" offset="0%"></stop><stop stop-color="rgba(25, 101, 84, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,0L120,49C240,98,480,196,720,196C960,196,1200,98,1440,81.7C1680,65,1920,131,2160,179.7C2400,229,2640,261,2880,269.5C3120,278,3360,261,3600,220.5C3840,180,4080,114,4320,89.8C4560,65,4800,82,5040,106.2C5280,131,5520,163,5760,163.3C6000,163,6240,131,6480,106.2C6720,82,6960,65,7200,49C7440,33,7680,16,7920,81.7C8160,147,8400,294,8640,294C8880,294,9120,147,9360,73.5C9600,0,9840,0,10080,40.8C10320,82,10560,163,10800,163.3C11040,163,11280,82,11520,89.8C11760,98,12000,196,12240,245C12480,294,12720,294,12960,245C13200,196,13440,98,13680,73.5C13920,49,14160,98,14400,138.8C14640,180,14880,212,15120,204.2C15360,196,15600,147,15840,106.2C16080,65,16320,33,16560,32.7C16800,33,17040,65,17160,81.7L17280,98L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path><defs><linearGradient id="sw-gradient-2" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(28, 28, 28, 1)" offset="0%"></stop><stop stop-color="rgba(67, 239, 98.564, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 100px); opacity:0.8" fill="url(#sw-gradient-2)" d="M0,343L120,310.3C240,278,480,212,720,204.2C960,196,1200,245,1440,294C1680,343,1920,392,2160,367.5C2400,343,2640,245,2880,220.5C3120,196,3360,245,3600,220.5C3840,196,4080,98,4320,81.7C4560,65,4800,131,5040,163.3C5280,196,5520,196,5760,220.5C6000,245,6240,294,6480,334.8C6720,376,6960,408,7200,351.2C7440,294,7680,147,7920,147C8160,147,8400,294,8640,343C8880,392,9120,343,9360,269.5C9600,196,9840,98,10080,57.2C10320,16,10560,33,10800,73.5C11040,114,11280,180,11520,220.5C11760,261,12000,278,12240,269.5C12480,261,12720,229,12960,196C13200,163,13440,131,13680,147C13920,163,14160,229,14400,245C14640,261,14880,229,15120,228.7C15360,229,15600,261,15840,228.7C16080,196,16320,98,16560,122.5C16800,147,17040,294,17160,367.5L17280,441L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path><defs><linearGradient id="sw-gradient-3" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(141, 233, 105, 1)" offset="0%"></stop><stop stop-color="rgba(28, 28, 28, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 150px); opacity:0.7" fill="url(#sw-gradient-3)" d="M0,98L120,155.2C240,212,480,327,720,310.3C960,294,1200,147,1440,89.8C1680,33,1920,65,2160,114.3C2400,163,2640,229,2880,277.7C3120,327,3360,359,3600,359.3C3840,359,4080,327,4320,261.3C4560,196,4800,98,5040,98C5280,98,5520,196,5760,228.7C6000,261,6240,229,6480,245C6720,261,6960,327,7200,302.2C7440,278,7680,163,7920,147C8160,131,8400,212,8640,261.3C8880,310,9120,327,9360,326.7C9600,327,9840,310,10080,253.2C10320,196,10560,98,10800,73.5C11040,49,11280,98,11520,138.8C11760,180,12000,212,12240,187.8C12480,163,12720,82,12960,89.8C13200,98,13440,196,13680,204.2C13920,212,14160,131,14400,155.2C14640,180,14880,310,15120,351.2C15360,392,15600,343,15840,277.7C16080,212,16320,131,16560,122.5C16800,114,17040,180,17160,212.3L17280,245L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
+                <h2 class="overlay">COMUNICATE CON NOSOTROS</h2>
+                <div class="overlay socialMediaContainer">
                     
-                </div>    
-            </div>
-        </div>
-        
-    </main>
-
-    <footer>
-
-    </footer>
+                </div>
+            </div>    
+        </footer>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="./vendor/vegas/vegas.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="./js/templates.js"></script>
     <script src="./js/products.js"></script>
     <script src="./js/index.js"></script>
-</body>
 </html>
