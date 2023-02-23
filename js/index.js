@@ -19,7 +19,7 @@ const openAndCloseCart = () => {
 }
 
 const crearGaleria = async () => {
-  const resp = await fetch('../json/products.json');
+  const resp = await fetch('../json/products.js');
   const arr =  await resp.json();
   arr.forEach((prod) => {
     let card = document.createElement("div");
